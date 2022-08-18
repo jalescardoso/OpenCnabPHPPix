@@ -90,7 +90,7 @@ Acesse a url de exemplo:
             Cnab400
         </td>
         <td>
-            Beta
+            Beta (pix)
         </td>
     </tr>
     <tr>
