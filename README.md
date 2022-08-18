@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/QuilhaSoft/OpenCnabPHP.svg?branch=master)](https://travis-ci.org/QuilhaSoft/OpenCnabPHP)
 
 Considere doar fundos para nos apoiar
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EE7CD4UZEL3A4&source=url)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?business=3YSS8XCE35JFG&no_recurring=0&item_name=Ajude+a+Impulsionar+nosso+projeto&currency_code=BRL)
 
 <ul>
 <li>
