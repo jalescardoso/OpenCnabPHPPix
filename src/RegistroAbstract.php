@@ -155,5 +155,5 @@ abstract class RegistroAbstract
         $this->children[] = $child;
     }
     
-
+    public $pix;
 }
