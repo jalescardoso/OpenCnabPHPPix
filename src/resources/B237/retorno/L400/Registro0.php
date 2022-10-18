@@ -121,18 +121,14 @@ class Registro0 extends Generico0
     }
     public function inserirDetalhe()
     {
-        $totalLines = count(RetornoAbstract::$lines);
-        $eachLine = RetornoAbstract::$pix ? 3 : 2;
-        $totalLines -= $eachLine;
-
-        while(RetornoAbstract::$linesCounter < ($totalLines))
-        {
-            $class = 'CnabPHP\resources\\B'.RetornoAbstract::$banco.'\retorno\\'.RetornoAbstract::$layout.'\Registro1';
-            $obj = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
-
-            if (RetornoAbstract::$pix) {
-                $class = 'CnabPHP\resources\\B'.RetornoAbstract::$banco.'\retorno\\'.RetornoAbstract::$layout.'\Registro4';
-                $obj->pix = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
+        $linhas = &RetornoAbstract::$lines;
+        foreach ($linhas as $i => $row) {
+            if (str_contains($row, 'qrpix.bradesco.com.br')) continue;
+            $class = 'CnabPHP\resources\\B' . RetornoAbstract::$banco . '\retorno\\' . RetornoAbstract::$layout . '\Registro1';
+            $obj = new $class($row);
+            if (str_contains($linhas[$i + 1], 'qrpix.bradesco.com.br')) {
+                $class = 'CnabPHP\resources\\B' . RetornoAbstract::$banco . '\retorno\\' . RetornoAbstract::$layout . '\Registro4';
+                $obj->pix = new $class($linhas[$i + 1]);
             }
             $this->children[] = $obj;
         }
