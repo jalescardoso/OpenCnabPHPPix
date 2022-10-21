@@ -154,6 +154,8 @@ abstract class RegistroAbstract
     {
         $this->children[] = $child;
     }
-    
+    /**
+     * Objeto pix
+     */
     public $pix;
 }

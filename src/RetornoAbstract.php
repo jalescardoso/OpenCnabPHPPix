@@ -7,7 +7,7 @@ abstract class RetornoAbstract
 {
 
     //public  $hearder; // armazena o objeto registro 0 do arquivo
-    public $children = array(); // armazena os registros filhos da classe remessa
+    public $children = array(); // armazena os registros filhos da classe remessa; public para viabilizar sobrescrita
 
     public static $banco; // sera atribuido o nome do banco que tambem é o nome da pasta que contem os layouts
 
