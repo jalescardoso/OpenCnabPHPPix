@@ -107,6 +107,9 @@ abstract class RegistroRemAbstract extends RegistroAbstract {
                 case 'int':
                     $retorno = (isset($this->data[$prop]) && trim($this->data[$prop]) !== "" ? number_format($this->data[$prop], 0, '', '') : (isset($metaData['default']) ? $metaData['default'] : ''));
                     return str_pad($retorno, $metaData['tamanho'], '0', STR_PAD_LEFT);
+                case 'int2':
+                    $retorno = (isset($this->data[$prop]) && trim($this->data[$prop]) !== "" ? number_format($this->data[$prop], 0, '', '') : (isset($metaData['default']) ? $metaData['default'] : ''));
+                    return str_pad($retorno, $metaData['tamanho'], ($retorno ? '0' : ' '), STR_PAD_LEFT);
                 case 'alfa':
                     $retorno = (isset($this->data[$prop])) ? $this->prepareText($this->data[$prop]) : '';
                     return $this->mb_str_pad(mb_substr($retorno, 0, $metaData['tamanho'], "UTF-8"), $metaData['tamanho'], ' ', STR_PAD_RIGHT);
@@ -132,5 +135,4 @@ abstract class RegistroRemAbstract extends RegistroAbstract {
     public function getFileName() {
         return 'R' . RemessaAbstract::$banco . str_pad($this->entryData['numero_sequencial_arquivo'], 4, '0', STR_PAD_LEFT) . '.rem';
     }
-
 }

@@ -143,19 +143,10 @@ class Registro0 extends Generico0 {
             "sequencia" => 13,
             "inicio" => 594,
             "tamanho" => 7,
-            "descricao" => "Sequencia do registro no arquivo igual a 0000001 para o header      ",
+            "descricao" => "Sequencia do registro no arquivo igual a 0000001 para o header",
             'default' => '1',
             'tipo' => 'int',
             'required' => true
         ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 14,
-        //     "inicio" => 142,
-        //     "tamanho" => 392,
-        //     "descricao" => "Deixar em branco",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
     ];
 }
