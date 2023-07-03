@@ -103,74 +103,56 @@ class Registro0 extends Generico0 {
             'tipo' => 'alfa',
             'required' => false
         ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 9,
-        //     "inicio" => 120,
-        //     "tamanho" => 6,
-        //     "descricao" => "Número da remessa do arquivo seqüencial do 000001, incrementando de 1 a cada novo movimento (1) ",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 10,
-        //     "inicio" => 126,
-        //     "tamanho" => 1,
-        //     "descricao" => "Código de envio de arquivo: (1) “E” - Entrada “R” - Retorno ",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 11,
-        //     "inicio" => 127,
-        //     "tamanho" => 4,
-        //     "descricao" => "Diferencial de remessa, caso a instituição informante tenha necessidade de enviar mais de uma remessa independentes por deptos., no mesmo dia, de 0000 à 9999. Caso contrário, em branco.",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 12,
-        //     "inicio" => 131,
-        //     "tamanho" => 3,
-        //     "descricao" => "Deixar em branco ",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 13,
-        //     "inicio" => 134,
-        //     "tamanho" => 8,
-        //     "descricao" => "Informar o LOGON a ser utilizado na contabilização das cartas comunicado e anotações.",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
+        "numero_sequencial_remessa" => [
+            "sequencia" => 9,
+            "inicio" => 120,
+            "tamanho" => 6,
+            "descricao" => "Número da remessa do arquivo seqüencial do 000001, incrementando de 1 a cada novo movimento (1) ",
+            'default' => '0',
+            'tipo' => 'int',
+            'required' => true
+        ],
+        "codigo_envio" => [
+            "sequencia" => 10,
+            "inicio" => 126,
+            "tamanho" => 1,
+            "descricao" => "Código de envio de arquivo: (1) “E” - Entrada “R” - Retorno ",
+            'default' => 'E',
+            'tipo' => 'alfa',
+            'required' => true
+        ],
+        "diferencial_remessa" => [
+            "sequencia" => 11,
+            "inicio" => 127,
+            "tamanho" => 4,
+            "descricao" => "Diferencial de remessa, caso a instituição informante tenha necessidade de enviar mais de uma remessa independentes por deptos., no mesmo dia, de 0000 à 9999. Caso contrário, em branco.",
+            'default' => '',
+            'tipo' => 'alfa',
+            'required' => false
+        ],
+        "deixar_vazio" => [
+            "sequencia" => 12,
+            "inicio" => 131,
+            "tamanho" => 463,
+            "descricao" => "Deixar em branco ",
+            'default' => '',
+            'tipo' => 'alfa',
+            'required' => false
+        ],
+        "sequencia_registro" => [
+            "sequencia" => 13,
+            "inicio" => 594,
+            "tamanho" => 7,
+            "descricao" => "Sequencia do registro no arquivo igual a 0000001 para o header      ",
+            'default' => '1',
+            'tipo' => 'int',
+            'required' => true
+        ],
         // "numero_inscricao" => [
         //     "sequencia" => 14,
         //     "inicio" => 142,
         //     "tamanho" => 392,
         //     "descricao" => "Deixar em branco",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 15,
-        //     "inicio" => 534,
-        //     "tamanho" => 60,
-        //     "descricao" => "Código de erros - 3 posições ocorrendo 20 vezes. Ausência de códigos indica que foi aceito no movimento de retorno. Na entrada, preencher com brancos.",
-        //     'default' => '0',
-        //     'tipo' => 'int',
-        //     'required' => true
-        // ],
-        // "numero_inscricao" => [
-        //     "sequencia" => 16,
-        //     "inicio" => 594,
-        //     "tamanho" => 7,
-        //     "descricao" => "Seqüência do registro no arquivo igual a 0000001 para o header.    (1) ",
         //     'default' => '0',
         //     'tipo' => 'int',
         //     'required' => true

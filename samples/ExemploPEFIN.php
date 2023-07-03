@@ -23,14 +23,9 @@
 * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-
-
-
 namespace CnabPHP\samples;
 require_once ("../vendor/autoload.php");
-
 use \CnabPHP\Remessa;
-
 $arquivo = new Remessa('pefin','cnab600',array(
     'codigo_registro'  	=>	'0', 
     'numero_inscricao'	=>	'41.263.541/0001-90', 
@@ -38,12 +33,11 @@ $arquivo = new Remessa('pefin','cnab600',array(
     'sequencia_registro' => 1,
     'numero_sequencial_arquivo' => 555,
     'telefone_instituicao' => "(62) 3956-5800",
-    'nome_instituicao' => 'SOLIDY Moto Club PMC'
+    'nome_instituicao' => 'SOLIDY Moto Club PMC',
+    'numero_sequencial_remessa' => 300,
+    'codigo_envio' => 'E'
 ));
-
-
 // $lote  = $arquivo->addLote(array('tipo_servico'=> '1')); // tipo_servico  = 1 para cobrança registrada, 2 para sem registro
-
 // $lote->inserirDetalhe(array(
 //     //Registro 3P Dados do Boleto
 //     'nosso_numero'      => '1800001', // numero sequencial de boleto
@@ -70,8 +64,6 @@ $arquivo = new Remessa('pefin','cnab600',array(
 //     'protestar'         => 	'1', // 1 = Protestar com (Prazo) dias, 3 = Devolver após (Prazo) dias
 //     'prazo_protesto'    => 	'90', // Informar o numero de dias apos o vencimento para iniciar o protesto
 //     'identificacao_contrato'	=>	"Contrato 32156",
-
-
 //     // Registro 3Q [PAGADOR]
 //     'tipo_inscricao'    => '1', //campo fixo, escreva '1' se for pessoa fisica, 2 se for pessoa juridica
 //     'numero_inscricao'  => '638.035.884-64',//cpf ou ncpj do pagador
@@ -81,24 +73,19 @@ $arquivo = new Remessa('pefin','cnab600',array(
 //     'cep_pagador'       => '36400-000', // com hífem
 //     'cidade_pagador'    => 'Conselheiro Lafaiete',
 //     'uf_pagador'        => 'MG',
-
 //     // Registro 3R Multas, descontos, etc
 //     // Você pode inserir desconto se houver, ou deixar em branco, mas quando informar
 //     // deve preencher os 3 campos: codigo, data e valor
 //     'codigo_multa'		=>	'2', // Taxa por mês
 //     'data_multa'   	  	=> 	'2018-04-30', // data dos juros, mesma do vencimento
 //     'vlr_multa'         => 	'0000000000002.00', // Valor do juros de 2% ao mês
-
 //     // Registro 3S3 Mensagens a serem impressas
 //     'mensagem_sc_1' 	=> "Após venc. Mora 0,03%/dia e Multa 2,00%",
 //     'mensagem_sc_2' 	=> "Não conceder desconto",
 //     'mensagem_sc_3' 	=> "Sujeito a protesto após o vencimento",
 //     'mensagem_sc_4' 	=> "VelvetTux Soluções em Sistemas <('')",
-
 // ));
-
 $remessa = utf8_decode($arquivo->getText()); // observar a header do seu php para não gerar comflitos de codificação de caracteres;
-
 /* Função que pega o nome das pastas de acordo com o número do ano
  * Caso as pastas não existam, serão criadas.
  * Os arquivos de remessa serão organizados em ano/mês
@@ -106,7 +93,6 @@ $remessa = utf8_decode($arquivo->getText()); // observar a header do seu php par
 function verificaPastas() {
     date_default_timezone_set('America/Sao_Paulo');
     $base_dir = dir('./data/remessas/');
-
     // if (!is_dir($base_dir->path.date('Y').'/'.date('m').'/')){
     //     mkdir ($base_dir->path.date('Y'), 0755);
     //     mkdir($base_dir->path.date('Y').'/'.date('m'), 0755);
@@ -115,10 +101,7 @@ function verificaPastas() {
     //Retorna o caminho para guardar o arquivo
     return $base_dir;
 }
-
 // Grava o arquivo
 file_put_contents(verificaPastas()->path.$arquivo->getFileName(), $remessa);
 verificaPastas()->close();
 echo $remessa;
-
-?>
