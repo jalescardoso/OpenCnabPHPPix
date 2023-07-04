@@ -25,12 +25,12 @@ class Registro9 extends Generico9 {
             'tipo' => 'alfa',
             'required' => false
         ],
-        'sequencia_registro' => [
+        'sequencial_registro' => [
             "sequencia" => 3,
             "inicio" => 594,
             "tamanho" => 7,
             "descricao" => "Seqüência do registro no arquivo. (1) ",
-            'default' => 9,
+            'default' => '',
             'tipo' => 'int',
             'required' => true
         ]

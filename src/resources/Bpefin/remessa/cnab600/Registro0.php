@@ -146,7 +146,7 @@ class Registro0 extends Generico0 {
             "descricao" => "Sequencia do registro no arquivo igual a 0000001 para o header",
             'default' => '1',
             'tipo' => 'int',
-            'required' => true
+            'required' => false
         ],
     ];
 }

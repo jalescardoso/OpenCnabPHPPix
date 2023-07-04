@@ -28,6 +28,7 @@ class Generico0 extends RegistroRemAbstract {
     }
     protected function recycleData($data) {
         $data['filial_digito'] = preg_replace("/[^0-9]/", "",explode('/', $this->entryData["numero_inscricao"])[1]);
+        $data['sequencial_registro'] = $this->get_counter();
         return $data;
     }
 }

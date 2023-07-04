@@ -31,27 +31,39 @@ require_once("../vendor/autoload.php");
 use \CnabPHP\Remessa;
 
 $arquivo = new Remessa('pefin', 'cnab600', array(
-    'codigo_registro'      =>    '0',
-    'numero_inscricao'    =>    '41.263.541/0001-90',
-    'data_geracao'    =>    '2023-05-16',
-    'sequencia_registro' => 1,
-    'numero_sequencial_arquivo' => 555,
-    'telefone_instituicao' => "(62) 3956-5800",
-    'nome_instituicao' => 'SOLIDY Moto Club PMC',
-    'numero_sequencial_remessa' => 300,
-    'codigo_envio' => 'E',
+    'codigo_registro'              => '0',
+    'numero_inscricao'             => '41.263.541/0001-90',
+    'data_geracao'                 => '2023-05-16',
+    'numero_sequencial_arquivo'    => 555,
+    'telefone_instituicao'         => "(62) 3956-5800",
+    'nome_instituicao'             => 'SOLIDY Moto Club PMC',
+    'numero_sequencial_remessa'    => 300,
+    'codigo_envio'                 => 'E',
 ));
-for ($i = 0; $i < 2; $i++) {
+for ($i = 0; $i < 5; $i++) {
     $arquivo->inserirDetalhe(
         [
-            'codigo_registro' => '1',
-            "codigo_operacao" => "I",
-            'data_vencimento_divida' => '2023-06-16',
-            // 'data_termino_contrato' => '2023-07-16',
-            'codigo_natureza_operacao' => 'DP', // duplicata
-            'tipo_pessoa' => 'F',
-            'tipo_doc' => '2',
-            'numero_doc' => '03040904175',
+            'codigo_registro'            => '1',
+            "codigo_operacao"            => "I",
+            'data_vencimento_divida'     => '2023-06-16',
+            'data_termino_contrato'      => '2023-07-16', // se vazio será preenchido pelo vencimento da divida
+            'codigo_natureza_operacao'   => 'DP', // duplicata
+            'tipo_pessoa'                => 'F',
+            'tipo_doc'                   => '2',
+            'numero_doc'                 => '03040904175',
+            'nome_devedor'               => "jales cardoso dias campos",
+            'data_nascimento'            => '1991-05-16',
+            'nome_pai'                   => 'jales dias campos',
+            'nome_mae'                   => 'dora lucia cardoso',
+            "endereco"                   => "Avenida Bela Vista Quadra 01 - Lote 09",
+            "bairro"                     => "Vila Santo Antonio - Conjunto Liberdade",
+            "municipio"                  => "Aparecida de Goiânia",
+            'uf'                         => "GO",
+            'cep'                        => '74911690',
+            'valor'                      => 352.99,
+            'numero_contrato'            => '1001993', // se vazio será preenchido com nosso numero
+            'nosso_numero'               => '1001993',
+            'telefone_devedor'           => "(62) 98553-4041",
         ],
     );
 }
