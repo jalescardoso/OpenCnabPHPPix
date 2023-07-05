@@ -135,4 +135,5 @@ abstract class RegistroRemAbstract extends RegistroAbstract {
     public function getFileName() {
         return 'R' . RemessaAbstract::$banco . str_pad($this->entryData['numero_sequencial_arquivo'], 4, '0', STR_PAD_LEFT) . '.rem';
     }
+    
 }
