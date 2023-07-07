@@ -297,6 +297,17 @@ Acesse a url de exemplo:
             Beta
         </td>
     </tr>  
+    <tr>
+        <td>
+            Serasa/Pefin
+        </td>
+        <td>
+            Cnab600
+        </td>
+        <td colspan="4">
+            Beta
+        </td>
+    </tr>  
 </table>
 
 ** o layout da caixa foi desativado pela caixa , modificações serão necessárias para que volte a funcionar
