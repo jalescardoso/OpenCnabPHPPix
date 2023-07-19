@@ -310,12 +310,8 @@ Acesse a url de exemplo:
     </tr>  
 </table>
 
-** o layout da caixa foi desativado pela caixa , modificações serão necessárias para que volte a funcionar
-veja essa issue para entender melhor
-https://github.com/QuilhaSoft/OpenCnabPHP/issues/184
 
 ```php
-
 <?php
 use \CnabPHP\Remessa;
 
@@ -396,8 +392,6 @@ foreach($registros as $registro)
     }
 }
 ```
-
-Aguardando voluntarios para edição e testes dos layouts.
 
 ## Licença
 
