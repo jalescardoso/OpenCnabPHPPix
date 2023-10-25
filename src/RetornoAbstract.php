@@ -48,7 +48,7 @@ abstract class RetornoAbstract
         } elseif ($length == 400 || $length == 401) {
             $bytes = 400;
             $layout_versao = '400';
-            $codigo_banco = substr($lines[0], 77, 3);
+            $codigo_banco = (int)preg_replace("/[^0-9]/", "", substr($lines[0], 76, 4));
             $codigo_tipo = substr($lines[0], 1, 1);
         } else {
             throw new Exception("Não foi possivel detectar o tipo do arquivo, provavelmente esta corrompido");
