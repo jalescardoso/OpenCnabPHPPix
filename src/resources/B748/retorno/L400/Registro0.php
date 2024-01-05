@@ -122,8 +122,19 @@ class Registro0 extends Generico0
     {
         while(RetornoAbstract::$linesCounter < (count(RetornoAbstract::$lines)-2))
         {
-            $class = 'CnabPHP\resources\\B'.RetornoAbstract::$banco.'\retorno\\'.RetornoAbstract::$layout.'\Registro1';
-            $this->children[] = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
+            $tpReg = substr(RetornoAbstract::$lines[RetornoAbstract::$linesCounter], 0,1);
+            $pix = (substr(RetornoAbstract::$lines[RetornoAbstract::$linesCounter+1], 0,1) == 8)? true: false;
+            if($tpReg == '1') {
+                $class = 'CnabPHP\resources\\B'.RetornoAbstract::$banco.'\retorno\\'.RetornoAbstract::$layout.'\Registro1';
+                $obj = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
+                if($pix) {
+                    $classPix = 'CnabPHP\resources\\B'.RetornoAbstract::$banco.'\retorno\\'.RetornoAbstract::$layout.'\Registro8';
+                    $obj->pix = new $classPix(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
+                }
+                $this->children[] = $obj;
+            } else {
+                RetornoAbstract::$linesCounter++;
+            }
         }
         //RetornoAbstract::$linesCounter--;
     }

@@ -41,7 +41,7 @@ abstract class RegistroRemAbstract extends RegistroAbstract {
      */
     public function __construct($data = NULL) {
         if ($data) { // se o ID for informado
-            // carrega o objeto correspondente
+            // carrega o objeto correspondentea
             $this->entryData = $data;
             foreach ($this->meta as $key => $value) {
                 $this->$key = (isset($data[$key])) ? $data[$key] : $this->meta[$key]['default'];

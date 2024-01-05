@@ -34,7 +34,19 @@ class Registro1 extends Generico1 {
             'required' => true
         ),
         'filler0' => array(
-            'tamanho' => 12,
+            'tamanho' => 1,
+            'default' => ' ',
+            'tipo' => 'alfa',
+            'required' => true
+        ),
+        'boleto_hibrido' => array( // campo para informar se é um boleto que deve conter informações de pix. será informado H para boletos hibridos (boletos com pix)
+            'tamanho' => 1,
+            'default' => ' ',
+            'tipo' => 'alfa',
+            'required' => true
+        ),
+        'filler01' => array(
+            'tamanho' => 10,
             'default' => ' ',
             'tipo' => 'alfa',
             'required' => true
@@ -57,7 +69,7 @@ class Registro1 extends Generico1 {
             'tipo' => 'alfa',
             'required' => true
         ),
-        'filler01' => array(
+        'filler02' => array(
             'tamanho' => 28,
             'default' => ' ',
             'tipo' => 'alfa',
@@ -69,7 +81,7 @@ class Registro1 extends Generico1 {
             'tipo' => 'alfa',
             'required' => true
         ),
-        'filler02' => array(
+        'filler03' => array(
             'tamanho' => 6,
             'default' => ' ',
             'tipo' => 'alfa',
@@ -93,7 +105,7 @@ class Registro1 extends Generico1 {
             'tipo' => 'alfa',
             'required' => true
         ),
-        'filler03' => array(
+        'filler04' => array(
             'tamanho' => 1,
             'default' => ' ',
             'tipo' => 'alfa',
@@ -117,7 +129,7 @@ class Registro1 extends Generico1 {
             'tipo' => 'int',
             'required' => true
         ),
-        'filler04' => array(
+        'filler05' => array(
             'tamanho' => 4,
             'default' => ' ',
             'tipo' => 'alfa',
@@ -137,7 +149,7 @@ class Registro1 extends Generico1 {
             'precision' => 2,
             'required' => true
         ),
-        'filler05' => array(
+        'filler06' => array(
             'tamanho' => 12,
             'default' => ' ',
             'tipo' => 'alfa',
@@ -168,7 +180,7 @@ class Registro1 extends Generico1 {
             'precision' => 2,
             'required' => true
         ),
-        'filler06' => array(
+        'filler07' => array(
             'tamanho' => 9,
             'default' => ' ',
             'tipo' => 'alfa',
@@ -224,7 +236,7 @@ class Registro1 extends Generico1 {
             'precision' => 2,
             'required' => true
         ),
-        'filler07' => array(
+        'filler08' => array(
             'tamanho' => 13,
             'default' => '0',
             'tipo' => 'int',
@@ -243,7 +255,7 @@ class Registro1 extends Generico1 {
             'tipo' => 'int',
             'required' => true
         ),
-        'filler08' => array(
+        'filler09' => array(
             'tamanho' => 1,
             'default' => '0',
             'tipo' => 'int',
@@ -273,13 +285,13 @@ class Registro1 extends Generico1 {
             'tipo' => 'int',
             'required' => true
         ),
-        'filler09' => array(
+        'filler10' => array(
             'tamanho' => 6,
             'default' => '0',
             'tipo' => 'int',
             'required' => true
         ),
-        'filler10' => array(
+        'filler11' => array(
             'tamanho' => 1,
             'default' => ' ',
             'tipo' => 'alfa',
