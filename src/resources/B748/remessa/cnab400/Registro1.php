@@ -343,7 +343,7 @@ class Registro1 extends Generico1 {
     }
    
     public function set_emissao_boleto($value) {
-        $this->data['emissao_boleto'] = $value == 2 ? "B" : 'A';  // 1 igual A =  emissão pelo banco 2 igual B = emissão pelo cedente
+        $this->data['emissao_boleto'] = ($value == 2 || $value == "B") ? "B" : 'A';   // 1 igual A =  emissão pelo banco 2 igual B = emissão pelo cedente
     }
 
     public function set_protestar($value) {
