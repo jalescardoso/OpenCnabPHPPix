@@ -113,7 +113,7 @@ class Registro1 extends Generico1 {
         ),
         'emissao_boleto' => array( // impressão do boleto pelo cliente
             'tamanho' => 1,
-            'default' => 'B',
+            'default' => '2',
             'tipo' => 'alfa',
             'required' => true
         ),
