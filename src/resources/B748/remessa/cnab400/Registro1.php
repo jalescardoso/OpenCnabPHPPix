@@ -236,8 +236,20 @@ class Registro1 extends Generico1 {
             'precision' => 2,
             'required' => true
         ),
-        'filler08' => array(
-            'tamanho' => 13,
+        'cod_negativacao' => array( //quebrar campo em 3 campos para informações sobre negativacao de cliente
+            'tamanho' => 2,
+            'default' => '0',
+            'tipo' => 'int',
+            'required' => true
+        ),
+        'prazo_negativacao' => array( //quebrar campo em 3 campos para informações sobre negativacao de cliente
+            'tamanho' => 2,
+            'default' => '0',
+            'tipo' => 'int',
+            'required' => true
+        ),
+        'filler08' => array( //quebrar campo em 3 campos para informações sobre negativacao de cliente
+            'tamanho' => 9,
             'default' => '0',
             'tipo' => 'int',
             'required' => true
