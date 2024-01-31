@@ -59,7 +59,10 @@ abstract class RetornoAbstract
         self::$banco = $codigo_banco;
         self::$layout = "L" . $layout_versao;
         $class = 'CnabPHP\resources\\B' . self::$banco . '\retorno\\' . self::$layout . '\Registro0';
-
+        if(!class_exists($class)) {
+            // provavel causa
+            throw new Exception("O banco não esta homologado para retorno no layout {$bytes}");
+        }
         self::$lines = $lines;
         $this->children[] = new $class($lines[0]);
 
