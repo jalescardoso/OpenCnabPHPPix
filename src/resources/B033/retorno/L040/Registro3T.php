@@ -217,7 +217,7 @@ class Registro3T extends Generico3
 		),
         // - ------------------ até aqui é igual para todo registro tipo 3
         "agencia" => array(
-			'tamanho'=>5,
+			'tamanho'=>4,
 			'default'=>'',
 			'tipo'=>'int',
 			'required'=>true),
@@ -227,16 +227,11 @@ class Registro3T extends Generico3
 			'tipo'=>'int',
 			'required'=>true),
 		"conta" => array(
-			'tamanho'=>12,
-			'default'=>'',
+			'tamanho'=>9,
+			'default'=>'0',
 			'tipo'=>'int',
 			'required'=>true),
 		"conta_dv" => array(
-			'tamanho'=>1,
-			'default'=>'',
-			'tipo'=>'int',
-			'required'=>true),
-		"agencia_conta_dv" => array(
 			'tamanho'=>1,
 			'default'=>'',
 			'tipo'=>'int',
