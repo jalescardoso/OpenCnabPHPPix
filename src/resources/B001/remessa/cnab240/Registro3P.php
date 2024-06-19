@@ -276,13 +276,10 @@ class Registro3P extends Generico3 {
     public function inserirDetalhe($data) {
         $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro3Q';
         $this->children[] = new $class($data);
-        if (isset($data['codigo_desconto2']) ||
-                isset($data['codigo_desconto3']) ||
-                isset($data['mensagem'])
-                ) {
-            $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro3R';
-            $this->children[] = new $class($data);
-        }
+
+        $class = 'CnabPHP\resources\\B' . RemessaAbstract::$banco . '\remessa\\' . RemessaAbstract::$layout . '\Registro3R';
+        $this->children[] = new $class($data);
+        
         if ($data['emissao_boleto'] == 1) {
             if (isset($data['mensagem_frente'])) {
                 $data['mensagem_140'] = $data['mensagem_frente'];
