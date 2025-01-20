@@ -166,11 +166,15 @@ class Registro1 extends Generico1
 		{
 			RetornoAbstract::$linesCounter++;
 			$class = 'CnabPHP\resources\\B'.RetornoAbstract::$banco.'\retorno\\'.RetornoAbstract::$layout.'\Registro3T';
-			$this->children[] = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
-			
+			$cob = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
+			RetornoAbstract::$linesCounter++;
+			if(str_contains(RetornoAbstract::$lines[RetornoAbstract::$linesCounter], 'pix.sicoob.com.br')) {
+				$class = 'CnabPHP\resources\\B' . RetornoAbstract::$banco . '\retorno\\' . RetornoAbstract::$layout . '\Registro3Y08';
+				$cob->pix = new $class(RetornoAbstract::$lines[RetornoAbstract::$linesCounter]);
+			} else RetornoAbstract::$linesCounter--;
+			$this->children[] = $cob;
 		}
 		RetornoAbstract::$linesCounter--;
-		$teste = array_pop($this->children);
 	}
 
 }
