@@ -27,8 +27,6 @@ namespace CnabPHP\resources\B756\retorno\L085;
 use CnabPHP\resources\generico\retorno\L040\Generico3;
 //use CnabPHP\RetornoAbstract;
 use CnabPHP\Exception;
-use CnabPHP\RetornoAbstract;
-
 
 class Registro3Y08 extends Generico3
 {
@@ -99,5 +97,3 @@ class Registro3Y08 extends Generico3
 	);
 
 }
-
-?>
